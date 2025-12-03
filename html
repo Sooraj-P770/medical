@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Delivery Robot UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <!-- Home Screen -->
+    <div id="home" class="screen">
+        <h2>Medicine Delivery Robot</h2>
+
+        <div class="card-row">
+            <div class="card" onclick="navigate('deliver')">Deliver Medicine</div>
+            <div class="card" onclick="navigate('status')">Robot Status</div>
+            <div class="card" onclick="navigate('settings')">Settings</div>
+        </div>
+
+        <footer>Powered by Your Team Name</footer>
+    </div>
+
+    <!-- Deliver Medicine Screen -->
+    <div id="deliver" class="screen hidden">
+        <div class="back-card" onclick="goBack()">⬅ Back</div>
+        <h2>Select Patient Bed</h2>
+
+        <div class="bed-grid">
+            <div class="card" onclick="sendCommand('BED1')">Bed 1</div>
+            <div class="card" onclick="sendCommand('BED2')">Bed 2</div>
+            <div class="card" onclick="sendCommand('BED3')">Bed 3</div>
+            <div class="card" onclick="sendCommand('BED4')">Bed 4</div>
+        </div>
+
+        <div class="card-row">
+            <div class="card stop-card" onclick="sendCommand('STOP')">EMERGENCY STOP</div>
+            <div class="card" onclick="navigate('home')">Home</div>
+        </div>
+    </div>
+
+    <!-- Robot Status Screen -->
+    <div id="status" class="screen hidden">
+        <div class="back-card" onclick="goBack()">⬅ Back</div>
+        <h2>Robot Status</h2>
+
+        <div id="statusBox" class="status-box">
+            Loading status...
+        </div>
+
+        <div class="card-row">
+            <div class="card" onclick="refreshStatus()">Refresh Status</div>
+            <div class="card" onclick="navigate('home')">Home</div>
+        </div>
+    </div>
+
+    <!-- Settings Screen -->
+    <div id="settings" class="screen hidden">
+        <div class="back-card" onclick="goBack()">⬅ Back</div>
+        <h2>Settings</h2>
+
+        <p>Select Communication Mode:</p>
+        <label><input type="radio" name="mode" value="wifi" checked> WiFi</label>
+        <label><input type="radio" name="mode" value="bluetooth"> Bluetooth</label>
+
+        <div id="wifiSettings">
+            <input id="robotIP" type="text" placeholder="Enter Robot IP (e.g. 192.168.1.50)">
+            <div class="card-row">
+                <div class="card" onclick="testConnection()">Test Connection</div>
+            </div>
+        </div>
+
+        <h3>Other</h3>
+        <div class="card-row">
+            <div class="card" onclick="navigate('adminPin')">Admin Panel</div>
+            <div class="card" onclick="navigate('home')">Home</div>
+        </div>
+
+        <p>App Version: 1.0</p>
+    </div>
+
+    <!-- Admin PIN Screen -->
+    <div id="adminPin" class="screen hidden">
+        <div class="back-card" onclick="goBack()">⬅ Back</div>
+        <h2>Enter Admin PIN</h2>
+        <input id="pinInput" type="password" placeholder="PIN: 1234">
+        <div class="card-row">
+            <div class="card" onclick="checkPIN()">Enter</div>
+            <div class="card" onclick="navigate('home')">Home</div>
+        </div>
+    </div>
+
+    <!-- Admin Screen -->
+    <div id="admin" class="screen hidden">
+        <div class="back-card" onclick="goBack()">⬅ Back</div>
+        <h2>Admin Panel</h2>
+
+        <div class="card-row">
+            <div class="card" onclick="sendCommand('DISPENSE_TEST')">Dispense Test</div>
+            <div class="card" onclick="sendCommand('CALIBRATE')">Calibrate Line Sensors</div>
+            <div class="card" onclick="navigate('home')">Home</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
