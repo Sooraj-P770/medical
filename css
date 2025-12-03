@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("ui.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: #333;
+}
+
+.screen {
+    padding: 30px;
+}
+
+.hidden {
+    display: none;
+}
+
+h1, h2 {
+    color: #3F51B5;
+}
+
+/* Card row for horizontal layout */
+.card-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* General card style */
+.card {
+    background: #3F51B5;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Shadow effect */
+}
+
+.card:hover {
+    background: #2c3eae;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* stronger shadow on hover */
+}
+
+/* Special stop card */
+.stop-card {
+    background: red;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.stop-card:hover {
+    background: darkred;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* Back button */
+.back-card {
+    display: inline-block;
+    background: #3F51B5;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.back-card:hover {
+    background: #2c3eae;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Bed selection grid */
+.bed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Status box */
+.status-box {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    color: gray;
+}
